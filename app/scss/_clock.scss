@@ -1,0 +1,115 @@
+.clock {
+  width: 25rem;
+  height: 25rem;
+  background-color: rgba($primary, 0.8);
+  border-radius: 50%;
+  position: relative;
+  border: 0.3125rem solid $primaryVar;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: $second;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 4;
+  }
+
+  &__date {
+    position: absolute;
+    width: 25%;
+    height: 9%;
+    background-color: rgba($color: #fff, $alpha: 0.5);
+    left: 50%;
+    bottom: 25%;
+    transform: translate(-50%);
+    border-radius: 0.3125rem;
+    border: 0.2px solid $primaryVar;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $second;
+    font-size: 1.5rem;
+  }
+
+  &__number {
+    --rotation: 0deg;
+    position: absolute;
+    left: 50%;
+    height: 50%;
+    // background-color: black;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(var(--rotation));
+
+    &.number1 {
+      --rotation: 30deg;
+    }
+    &.number2 {
+      --rotation: 60deg;
+    }
+    &.number3 {
+      --rotation: 90deg;
+    }
+    &.number4 {
+      --rotation: 120deg;
+    }
+    &.number5 {
+      --rotation: 150deg;
+    }
+    &.number6 {
+      --rotation: 180deg;
+    }
+    &.number7 {
+      --rotation: 210deg;
+    }
+    &.number8 {
+      --rotation: 240deg;
+    }
+    &.number9 {
+      --rotation: 270deg;
+    }
+    &.number10 {
+      --rotation: 300deg;
+    }
+    &.number11 {
+      --rotation: 330deg;
+    }
+  }
+
+  &__hand {
+    --rotation: 0;
+    border-top-left-radius: 0.3125rem;
+    border-top-right-radius: 0.3125rem;
+    position: absolute;
+    background-color: $second;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(var(--rotation));
+    border: 0.5px solid $primaryVar;
+
+    &.seconds {
+      //   --rotation: 30deg;
+      width: 3px;
+      height: 40%;
+      z-index: 3;
+    }
+
+    &.minutes {
+      width: 5px;
+      height: 37%;
+      z-index: 2;
+      //   --rotation: 90deg;
+    }
+
+    &.hours {
+      width: 10px;
+      height: 30%;
+      z-index: 1;
+    }
+  }
+}

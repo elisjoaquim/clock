@@ -1,0 +1,129 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background-color: #104172;
+}
+
+.flex {
+  display: flex;
+}
+.flex-jc-c {
+  justify-content: center;
+}
+.flex-ai-c {
+  align-items: center;
+}
+
+.clock {
+  width: 25rem;
+  height: 25rem;
+  background-color: rgba(227, 227, 124, 0.8);
+  border-radius: 50%;
+  position: relative;
+  border: 0.3125rem solid #b5ab73;
+}
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: #104172;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 4;
+}
+.clock__date {
+  position: absolute;
+  width: 25%;
+  height: 9%;
+  background-color: rgba(255, 255, 255, 0.5);
+  left: 50%;
+  bottom: 25%;
+  transform: translate(-50%);
+  border-radius: 0.3125rem;
+  border: 0.2px solid #b5ab73;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #104172;
+  font-size: 1.5rem;
+}
+.clock__number {
+  --rotation: 0deg;
+  position: absolute;
+  left: 50%;
+  height: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(var(--rotation));
+}
+.clock__number.number1 {
+  --rotation: 30deg;
+}
+.clock__number.number2 {
+  --rotation: 60deg;
+}
+.clock__number.number3 {
+  --rotation: 90deg;
+}
+.clock__number.number4 {
+  --rotation: 120deg;
+}
+.clock__number.number5 {
+  --rotation: 150deg;
+}
+.clock__number.number6 {
+  --rotation: 180deg;
+}
+.clock__number.number7 {
+  --rotation: 210deg;
+}
+.clock__number.number8 {
+  --rotation: 240deg;
+}
+.clock__number.number9 {
+  --rotation: 270deg;
+}
+.clock__number.number10 {
+  --rotation: 300deg;
+}
+.clock__number.number11 {
+  --rotation: 330deg;
+}
+.clock__hand {
+  --rotation: 0;
+  border-top-left-radius: 0.3125rem;
+  border-top-right-radius: 0.3125rem;
+  position: absolute;
+  background-color: #104172;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(var(--rotation));
+  border: 0.5px solid #b5ab73;
+}
+.clock__hand.seconds {
+  width: 3px;
+  height: 40%;
+  z-index: 3;
+}
+.clock__hand.minutes {
+  width: 5px;
+  height: 37%;
+  z-index: 2;
+}
+.clock__hand.hours {
+  width: 10px;
+  height: 30%;
+  z-index: 1;
+}/*# sourceMappingURL=style.css.map */
